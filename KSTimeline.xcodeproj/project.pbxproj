@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		514A31641FE115C300795B16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A31631FE115C300795B16 /* AppDelegate.swift */; };
+		514A31661FE115C300795B16 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A31651FE115C300795B16 /* ViewController2.swift */; };
+		514A31691FE115C300795B16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514A31671FE115C300795B16 /* Main.storyboard */; };
+		514A316B1FE115C300795B16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514A316A1FE115C300795B16 /* Assets.xcassets */; };
+		514A316E1FE115C300795B16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514A316C1FE115C300795B16 /* LaunchScreen.storyboard */; };
+		514A317E1FE115F900795B16 /* KSTimeline.h in Headers */ = {isa = PBXBuildFile; fileRef = 514A317C1FE115F900795B16 /* KSTimeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		514A31811FE115F900795B16 /* KSTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514A317A1FE115F900795B16 /* KSTimeline.framework */; };
+		514A31821FE115F900795B16 /* KSTimeline.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 514A317A1FE115F900795B16 /* KSTimeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		514A318A1FE1163D00795B16 /* KSTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A31871FE1163D00795B16 /* KSTimelineView.swift */; };
+		514A318B1FE1163D00795B16 /* KSTimelineContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A31881FE1163D00795B16 /* KSTimelineContentView.swift */; };
+		514A318C1FE1163D00795B16 /* KSTimelineRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A31891FE1163D00795B16 /* KSTimelineRulerView.swift */; };
+		514A318E1FE116C000795B16 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A318D1FE116C000795B16 /* VideoHelper.swift */; };
+		514A31921FE1195100795B16 /* BigBunny.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 514A318F1FE1195100795B16 /* BigBunny.mp4 */; };
+		514A31931FE1195100795B16 /* Toystory.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 514A31901FE1195100795B16 /* Toystory.mp4 */; };
+		514A31941FE1195100795B16 /* F35.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 514A31911FE1195100795B16 /* F35.mp4 */; };
+		515662111FE1434600E6CED8 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515662101FE1434600E6CED8 /* ViewController1.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		514A317F1FE115F900795B16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 514A31581FE115C300795B16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 514A31791FE115F900795B16;
+			remoteInfo = KSTimeline;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		514A31861FE115F900795B16 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				514A31821FE115F900795B16 /* KSTimeline.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		514A31601FE115C300795B16 /* KSTimelineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSTimelineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		514A31631FE115C300795B16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		514A31651FE115C300795B16 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		514A31681FE115C300795B16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		514A316A1FE115C300795B16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		514A316D1FE115C300795B16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		514A316F1FE115C300795B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		514A317A1FE115F900795B16 /* KSTimeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSTimeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		514A317C1FE115F900795B16 /* KSTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSTimeline.h; sourceTree = "<group>"; };
+		514A317D1FE115F900795B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		514A31871FE1163D00795B16 /* KSTimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTimelineView.swift; sourceTree = "<group>"; };
+		514A31881FE1163D00795B16 /* KSTimelineContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTimelineContentView.swift; sourceTree = "<group>"; };
+		514A31891FE1163D00795B16 /* KSTimelineRulerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTimelineRulerView.swift; sourceTree = "<group>"; };
+		514A318D1FE116C000795B16 /* VideoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
+		514A318F1FE1195100795B16 /* BigBunny.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BigBunny.mp4; sourceTree = "<group>"; };
+		514A31901FE1195100795B16 /* Toystory.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Toystory.mp4; sourceTree = "<group>"; };
+		514A31911FE1195100795B16 /* F35.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = F35.mp4; sourceTree = "<group>"; };
+		515662101FE1434600E6CED8 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		514A315D1FE115C300795B16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514A31811FE115F900795B16 /* KSTimeline.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		514A31761FE115F900795B16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		514A31571FE115C300795B16 = {
+			isa = PBXGroup;
+			children = (
+				514A317B1FE115F900795B16 /* KSTimeline */,
+				514A31621FE115C300795B16 /* KSTimelineDemo */,
+				514A31611FE115C300795B16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		514A31611FE115C300795B16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				514A31601FE115C300795B16 /* KSTimelineDemo.app */,
+				514A317A1FE115F900795B16 /* KSTimeline.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		514A31621FE115C300795B16 /* KSTimelineDemo */ = {
+			isa = PBXGroup;
+			children = (
+				514A31901FE1195100795B16 /* Toystory.mp4 */,
+				514A318F1FE1195100795B16 /* BigBunny.mp4 */,
+				514A31911FE1195100795B16 /* F35.mp4 */,
+				514A31631FE115C300795B16 /* AppDelegate.swift */,
+				514A318D1FE116C000795B16 /* VideoHelper.swift */,
+				515662101FE1434600E6CED8 /* ViewController1.swift */,
+				514A31651FE115C300795B16 /* ViewController2.swift */,
+				514A31671FE115C300795B16 /* Main.storyboard */,
+				514A316A1FE115C300795B16 /* Assets.xcassets */,
+				514A316C1FE115C300795B16 /* LaunchScreen.storyboard */,
+				514A316F1FE115C300795B16 /* Info.plist */,
+			);
+			path = KSTimelineDemo;
+			sourceTree = "<group>";
+		};
+		514A317B1FE115F900795B16 /* KSTimeline */ = {
+			isa = PBXGroup;
+			children = (
+				514A31881FE1163D00795B16 /* KSTimelineContentView.swift */,
+				514A31891FE1163D00795B16 /* KSTimelineRulerView.swift */,
+				514A31871FE1163D00795B16 /* KSTimelineView.swift */,
+				514A317C1FE115F900795B16 /* KSTimeline.h */,
+				514A317D1FE115F900795B16 /* Info.plist */,
+			);
+			path = KSTimeline;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		514A31771FE115F900795B16 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514A317E1FE115F900795B16 /* KSTimeline.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		514A315F1FE115C300795B16 /* KSTimelineDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 514A31721FE115C300795B16 /* Build configuration list for PBXNativeTarget "KSTimelineDemo" */;
+			buildPhases = (
+				514A315C1FE115C300795B16 /* Sources */,
+				514A315D1FE115C300795B16 /* Frameworks */,
+				514A315E1FE115C300795B16 /* Resources */,
+				514A31861FE115F900795B16 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				514A31801FE115F900795B16 /* PBXTargetDependency */,
+			);
+			name = KSTimelineDemo;
+			productName = KSTimelineDemo;
+			productReference = 514A31601FE115C300795B16 /* KSTimelineDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		514A31791FE115F900795B16 /* KSTimeline */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 514A31831FE115F900795B16 /* Build configuration list for PBXNativeTarget "KSTimeline" */;
+			buildPhases = (
+				514A31751FE115F900795B16 /* Sources */,
+				514A31761FE115F900795B16 /* Frameworks */,
+				514A31771FE115F900795B16 /* Headers */,
+				514A31781FE115F900795B16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KSTimeline;
+			productName = KSTimeline;
+			productReference = 514A317A1FE115F900795B16 /* KSTimeline.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		514A31581FE115C300795B16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = kenshih;
+				TargetAttributes = {
+					514A315F1FE115C300795B16 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					514A31791FE115F900795B16 = {
+						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 514A315B1FE115C300795B16 /* Build configuration list for PBXProject "KSTimeline" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 514A31571FE115C300795B16;
+			productRefGroup = 514A31611FE115C300795B16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				514A31791FE115F900795B16 /* KSTimeline */,
+				514A315F1FE115C300795B16 /* KSTimelineDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		514A315E1FE115C300795B16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514A31941FE1195100795B16 /* F35.mp4 in Resources */,
+				514A316E1FE115C300795B16 /* LaunchScreen.storyboard in Resources */,
+				514A31921FE1195100795B16 /* BigBunny.mp4 in Resources */,
+				514A31931FE1195100795B16 /* Toystory.mp4 in Resources */,
+				514A316B1FE115C300795B16 /* Assets.xcassets in Resources */,
+				514A31691FE115C300795B16 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		514A31781FE115F900795B16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		514A315C1FE115C300795B16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				515662111FE1434600E6CED8 /* ViewController1.swift in Sources */,
+				514A318E1FE116C000795B16 /* VideoHelper.swift in Sources */,
+				514A31661FE115C300795B16 /* ViewController2.swift in Sources */,
+				514A31641FE115C300795B16 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		514A31751FE115F900795B16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514A318A1FE1163D00795B16 /* KSTimelineView.swift in Sources */,
+				514A318B1FE1163D00795B16 /* KSTimelineContentView.swift in Sources */,
+				514A318C1FE1163D00795B16 /* KSTimelineRulerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		514A31801FE115F900795B16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 514A31791FE115F900795B16 /* KSTimeline */;
+			targetProxy = 514A317F1FE115F900795B16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		514A31671FE115C300795B16 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				514A31681FE115C300795B16 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		514A316C1FE115C300795B16 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				514A316D1FE115C300795B16 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		514A31701FE115C300795B16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		514A31711FE115C300795B16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		514A31731FE115C300795B16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79E68ZK73C;
+				INFOPLIST_FILE = KSTimelineDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kenshih.KSTimelineDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		514A31741FE115C300795B16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79E68ZK73C;
+				INFOPLIST_FILE = KSTimelineDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kenshih.KSTimelineDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		514A31841FE115F900795B16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KSTimeline/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kenshih.KSTimeline;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		514A31851FE115F900795B16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KSTimeline/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kenshih.KSTimeline;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		514A315B1FE115C300795B16 /* Build configuration list for PBXProject "KSTimeline" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				514A31701FE115C300795B16 /* Debug */,
+				514A31711FE115C300795B16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		514A31721FE115C300795B16 /* Build configuration list for PBXNativeTarget "KSTimelineDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				514A31731FE115C300795B16 /* Debug */,
+				514A31741FE115C300795B16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		514A31831FE115F900795B16 /* Build configuration list for PBXNativeTarget "KSTimeline" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				514A31841FE115F900795B16 /* Debug */,
+				514A31851FE115F900795B16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 514A31581FE115C300795B16 /* Project object */;
+}
