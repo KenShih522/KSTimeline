@@ -168,6 +168,12 @@ class ViewController2: UIViewController {
     
     // MARK: Internal Function
     
+    @objc func playerDidFinishPlaying(_ note: NSNotification) {
+        
+        self.navigationItem.rightBarButtonItem = self.playBtn
+        
+    }
+    
     internal func setupEvents() {
         
         var startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
@@ -266,11 +272,16 @@ class ViewController2: UIViewController {
         
         self.playerLayer?.removeFromSuperlayer()
         
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem)
+        
         let asset = AVURLAsset(url: event.videoURL)
         
         let playerItem = AVPlayerItem(asset: asset)
         
         self.player = AVPlayer(playerItem: playerItem)
+        
+        NotificationCenter.default.addObserver(self, selector: Selector(("playerDidFinishPlaying:")),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player!.currentItem)
         
         self.playerLayer = AVPlayerLayer(player: self.player!)
         
@@ -322,6 +333,19 @@ class ViewController2: UIViewController {
                 
                 self.playEvent(event: self.currentEvent!)
                 
+                self.prevousBtn.isEnabled = true
+
+                if self.currentEvent == self.events.last {
+                    
+                    self.nextBtn.isEnabled = false
+                    
+                }
+                else {
+                    
+                    self.nextBtn.isEnabled = true
+
+                }
+                
             }
             
         }
@@ -361,6 +385,14 @@ class ViewController2: UIViewController {
         guard let event = self.findEvents(date: self.timeline.currentDate) else { return }
         
         self.playEvent(event: event)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        
+        self.player?.pause()
         
     }
     
