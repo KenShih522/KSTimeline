@@ -5,6 +5,10 @@ KSTimeline, written in swift, is a simple and customizable view which supports s
 ## Preview
 
 ### Demo1
+
+ - adjust the time scale by pinch gesture<br />
+ - display different time mode according to time scale<br />
+
 <p align="center"> 
 <img src="https://i.imgur.com/2rTvNMW.gif">
 </p>
