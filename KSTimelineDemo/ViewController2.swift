@@ -33,6 +33,18 @@ class ViewController2: UIViewController {
     
     @IBOutlet weak var nextBtn: UIButton!
     
+    var currentDate: Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())! {
+        
+        didSet {
+            
+            let dateString = self.dateFormatter.string(from: currentDate)
+            
+            self.currentTime.text = dateString
+            
+        }
+        
+    }
+    
     var player: AVPlayer?
     
     var playerLayer: AVPlayerLayer?
@@ -69,7 +81,7 @@ class ViewController2: UIViewController {
         
         guard self.events.count > 0 else { return }
         
-        if let event = self.getPreviousEvent(date: self.timeline.currentDate) {
+        if let event = self.getPreviousEvent(date: self.currentDate) {
             
             if self.events.index(of: event) == 0 {
                 
@@ -89,7 +101,7 @@ class ViewController2: UIViewController {
         
         guard self.events.count > 0 else { return }
         
-        if let event = self.getNextEvent(date: self.timeline.currentDate) {
+        if let event = self.getNextEvent(date: self.currentDate) {
             
             if self.events.index(of: event) == self.events.count - 1 {
                 
@@ -125,9 +137,9 @@ class ViewController2: UIViewController {
     
     @IBAction func didPressPlayBtn(_ sender: Any) {
         
-        guard let event = self.findEvents(date: self.timeline.currentDate) else {
+        guard let event = self.findEvents(date: self.currentDate) else {
             
-            guard let event = self.getNextEvent(date: self.timeline.currentDate) else {
+            guard let event = self.getNextEvent(date: self.currentDate) else {
                 
                 guard self.events.count > 0 else { return }
                 
@@ -280,7 +292,7 @@ class ViewController2: UIViewController {
         
         self.player = AVPlayer(playerItem: playerItem)
         
-        NotificationCenter.default.addObserver(self, selector: Selector(("playerDidFinishPlaying:")),
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController2.playerDidFinishPlaying(_:)),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player!.currentItem)
         
         self.playerLayer = AVPlayerLayer(player: self.player!)
@@ -352,9 +364,7 @@ class ViewController2: UIViewController {
         
         self.timeline.scrollToDate(date: date)
         
-        let dateString = self.dateFormatter.string(from: date)
-        
-        self.currentTime.text = dateString
+        self.currentDate = date
         
     }
     
@@ -382,9 +392,11 @@ class ViewController2: UIViewController {
         
         self.pauseBtn.isEnabled = true
         
-        guard let event = self.findEvents(date: self.timeline.currentDate) else { return }
+        guard let event = self.findEvents(date: self.currentDate) else { return }
         
         self.playEvent(event: event)
+        
+        self.automaticallyAdjustsScrollViewInsets = true
         
     }
     
@@ -408,11 +420,17 @@ class ViewController2: UIViewController {
         
         super.viewWillTransition(to: size, with: coordinator)
         
+        self.timeline.isScrollingLocked = true
+        
         coordinator.animate(alongsideTransition: { (context) in
             
             self.timeline.contentView.rulerView.setNeedsDisplay()
             
+            self.timeline.scrollToDate(date: self.currentDate)
+            
         }) { (context) in
+            
+            self.timeline.isScrollingLocked = false
             
         }
         
@@ -444,15 +462,11 @@ extension ViewController2: KSTimelineDelegate {
         
         self.isScrolling = true
         
-        let dateString = self.dateFormatter.string(from: date)
-        
-        self.currentTime.text = dateString
+        self.currentDate = date
         
         guard let lastEvent = self.events.last else { return }
         
         guard let firstEvent = self.events.first else { return }
-        
-        let date = self.timeline.currentDate!
         
         if lastEvent == firstEvent {
             
@@ -461,14 +475,14 @@ extension ViewController2: KSTimelineDelegate {
             self.nextBtn.isEnabled = false
             
         }
-        else if date < firstEvent.end {
+        else if self.currentDate < firstEvent.end {
             
             self.prevousBtn.isEnabled = false
             
             self.nextBtn.isEnabled = true
             
         }
-        else if date > lastEvent.start {
+        else if self.currentDate > lastEvent.start {
             
             self.nextBtn.isEnabled = false
             
@@ -483,7 +497,7 @@ extension ViewController2: KSTimelineDelegate {
             
         }
         
-        guard let event = self.findEvents(date: date) else {
+        guard let event = self.findEvents(date: self.currentDate) else {
             
             self.player?.pause()
             

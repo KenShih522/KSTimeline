@@ -36,10 +36,10 @@ import UIKit
                 
         let numberOfEvents = dataSource.numberOfEvents(self)
         
-        let padding = UIScreen.main.bounds.width
+        let padding = UIScreen.main.widthOfSafeArea()
         
         let contentWidth = self.bounds.width - padding
-        
+                
         let unit_hour_width = contentWidth / 24
         
         let unit_minute_width = unit_hour_width / 60
@@ -82,7 +82,7 @@ import UIKit
 
         super.draw(rect)
         
-        let padding = UIScreen.main.bounds.width
+        let padding = UIScreen.main.widthOfSafeArea()
 
         let contentWidth = self.bounds.width - padding
 

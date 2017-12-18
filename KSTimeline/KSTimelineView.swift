@@ -52,6 +52,50 @@ import UIKit
         
 }
 
+extension UIScreen {
+    
+    func widthOfSafeArea() -> CGFloat {
+        
+        guard let rootView = UIApplication.shared.keyWindow else { return 0 }
+        
+        if #available(iOS 11.0, *) {
+            
+            let leftInset = rootView.safeAreaInsets.left
+            
+            let rightInset = rootView.safeAreaInsets.right
+            
+            return rootView.bounds.width - leftInset - rightInset
+            
+        } else {
+            
+            return rootView.bounds.width
+            
+        }
+        
+    }
+    
+    func heightOfSafeArea() -> CGFloat {
+        
+        guard let rootView = UIApplication.shared.keyWindow else { return 0 }
+        
+        if #available(iOS 11.0, *) {
+            
+            let topInset = rootView.safeAreaInsets.top
+            
+            let bottomInset = rootView.safeAreaInsets.bottom
+            
+            return rootView.bounds.height - topInset - bottomInset
+            
+        } else {
+            
+            return rootView.bounds.height
+            
+        }
+        
+    }
+    
+}
+
 @IBDesignable open class KSTimelineView: UIView {
     
     public var delegate: KSTimelineDelegate?
@@ -61,6 +105,8 @@ import UIKit
     public var basedDate: Date!
     
     public var currentDate: Date!
+    
+    public var isScrollingLocked = false
 
     public let contentView = KSTimelineContentView()
     
@@ -73,7 +119,7 @@ import UIKit
     var scale: CGFloat = 1.0
     
     var isPinching = false
-        
+    
     @IBInspectable var contentWidth: CGFloat = 2400
     
     // MARK: Public Methods
@@ -88,9 +134,7 @@ import UIKit
         
         guard let target_date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: self.basedDate) else { return }
         
-        let padding = UIScreen.main.bounds.width
-        
-        let contentWidth = self.contentView.contentSize.width - padding
+        let contentWidth = self.contentView.contentSize.width - UIScreen.main.widthOfSafeArea()
         
         let unit_hour_width = contentWidth / 24.0
         
@@ -187,7 +231,7 @@ import UIKit
 
         self.contentView.addGestureRecognizer(self.pinchGesture)
         
-        let padding = UIScreen.main.bounds.width
+        let padding = UIScreen.main.bounds.width - UIScreen.main.widthOfSafeArea()
         
         self.contentView.contentSize = CGSize(width: self.contentWidth + padding, height: self.bounds.height)
                                 
@@ -219,7 +263,7 @@ import UIKit
         
         let second = Calendar.current.component(.second, from: self.currentDate)
         
-        let padding = UIScreen.main.bounds.width
+        let padding: CGFloat = UIScreen.main.widthOfSafeArea()
         
         let contentWidth = self.contentView.contentSize.width - padding
         
@@ -311,11 +355,11 @@ extension KSTimelineView: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        guard isPinching == false else { return }
+        guard isPinching == false && isScrollingLocked == false else { return }
         
         guard let target_date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: self.basedDate) else { return }
         
-        let padding = UIScreen.main.bounds.width
+        let padding = self.bounds.width
         
         let contentWidth = scrollView.contentSize.width - padding
         
