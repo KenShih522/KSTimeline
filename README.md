@@ -81,3 +81,11 @@ KSTimeline, written in swift, is a simple and customizable view which supports s
         
 }
 ```
+
+# Installation
+### Cocoapods
+KSTimeline can be added to your project using CocoaPods by adding the following line to your `Podfile`:
+
+```ruby
+pod 'KSTimeline'
+```
