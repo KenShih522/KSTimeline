@@ -422,4 +422,7 @@ extension KSTimelineView: KSTimelineRulerEventDataSource {
         
     }
     
+    func timelineViewSize() -> CGSize {
+        return self.bounds.size
+    }
 }
