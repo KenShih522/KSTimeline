@@ -14,6 +14,8 @@ import UIKit
     
     func timelineRuler(_ ruler: KSTimelineRulerView, eventAt index: Int) -> KSTimelineEvent
 
+    func timelineViewSize() -> CGSize
+    
 }
 
 @IBDesignable open class KSTimelineRulerView: UIView {
@@ -36,7 +38,7 @@ import UIKit
                 
         let numberOfEvents = dataSource.numberOfEvents(self)
         
-        let padding = UIScreen.main.widthOfSafeArea()
+        let padding = dataSource.timelineViewSize().width
         
         let contentWidth = self.bounds.width - padding
                 
@@ -81,8 +83,10 @@ import UIKit
     override open func draw(_ rect: CGRect) {
 
         super.draw(rect)
+                
+        let numberOfEvents = dataSource.numberOfEvents(self)
         
-        let padding = UIScreen.main.widthOfSafeArea()
+        let padding = dataSource.timelineViewSize().width
 
         let contentWidth = self.bounds.width - padding
 
